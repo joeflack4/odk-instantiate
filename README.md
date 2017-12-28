@@ -9,6 +9,7 @@ A build tool for creating ODK XlsForms from generic reference Excel templates.
 
 Notes to add:
 - Exclude takes precedence over include.
+- all other worksheets will be included if they don't have a build_worksheet.
 
 ## How to use
 ### Prerequisites
@@ -27,10 +28,14 @@ templates should, at a minimum, meet the _ODK Instantiate template spec_.
 | Build single form from single file. | `python3 -m odk_instantiate INPUT_FILE -n FORM_NAME`|
 | Build multiple forms from multiple files. | `python3 -m odk_instantiate INPUT_FILE -n FORM_NAME_1 FORM_NAME_2`|
 
-#### Options
+#### Positional Arguments
+- `INPUT_FILE`: _In the form of `path/to/file.xlsx`._
+
+#### Named Arguments
 | Short Flag | Long Flag | Required? | Description |
 |------------|-----------|-----------|-------------|
 | -n         | --form-names | Yes    | What will be the name of the form to instantiate? All rows in the "build" worksheet which have this form name or * in the "includes" field will be added to the created form. |
+| -o         | --outpath | No        | Path to write output. If this argument is not supplied, then STDOUT is used. Option Usage: `-o OUPATH`.
 
 ## ODK Instantiate Template Specification
 ### Requirements
@@ -50,6 +55,8 @@ are as shown below.
     - label 
 
 In addition to that specification, this spec adds the following requirements.
+
+*# TODO:* Update this
 - File Type
   - Excel file (.xlsx)
 - Required Worksheets & Columns
@@ -70,6 +77,7 @@ In addition to that specification, this spec adds the following requirements.
     Syntax is the same as for the "excludes" field._
 
  ### Syntax
+*# TODO:* Update this.
  #### Build Worksheet
  - Wildcard character, `*`
    - If present in the `id` field, everything the entire worksheet will be 
