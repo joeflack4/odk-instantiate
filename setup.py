@@ -19,7 +19,10 @@ setup(
         pkg_name+'.test': 'test'
     },
     package_data={
-        pkg_name+'.test': ['files/*.xlsx'],
+        pkg_name+'.test': [
+            'files/*.xlsx',
+            'files/templates/*.xlsx'
+        ],
     },
     license='LICENSE.txt',
     description='A build tool for creating ODK XlsForms from generic reference'

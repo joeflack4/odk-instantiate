@@ -1,20 +1,18 @@
 # Project-Specific
-.idea
+.idea/
+*.dev/
 dev/
+build/
+output/
+test/files/ignored/
+test/files/templates/ignored/
 __pycache__
 *.pyc
-test/files/ignored/*
-*/test/files/ignored/*
 *~$*
 *.DS_Store
-build
-*.dev
 MANIFEST
 tags
-*.swp
-/*.html
 pmix.egg-info
-output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -25,9 +23,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.Python
 env/
-build/
 develop-eggs/
 dist/
 downloads/
@@ -40,6 +36,7 @@ sdist/
 var/
 wheels/
 *.egg-info/
+.Python
 .installed.cfg
 *.egg
 
@@ -101,7 +98,7 @@ celerybeat-schedule
 .env
 
 # virtualenv
-.venv
+.venv/
 venv/
 ENV/
 
